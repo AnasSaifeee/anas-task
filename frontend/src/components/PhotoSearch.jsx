@@ -18,6 +18,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     },
   }));
 function PhotoSearch() {
+ 
     const [open, setOpen] = React.useState(false);
     const [detail,setDetail]=useState([])
     const [show,setShow]=useState(false)
@@ -38,6 +39,13 @@ function PhotoSearch() {
   const {response, loading}=useSelector(state=>state.fetchphotos)
   const searchPhotos = async () => {
     dispatch(fetchPhotosAsync(query))
+  };
+  const styles = {
+    gridItem: {
+      width: `calc(100% / ${gridColumns})`,
+      padding: '2px',
+      cursor: 'pointer',
+    },
   };
 useEffect(()=>{
  if(response.photos)
@@ -137,10 +145,10 @@ useEffect(()=>{
 
       <>
       
-    <div  className={`w-1/${gridColumns} p-2 cursor-pointer` } onClick={()=>handleClickOpen(photo)}>
-      <img src={photo.src.small}
- alt="" width="500px"   />
-    </div>
+      <div style={styles.gridItem} onClick={() => handleClickOpen(photo)}>
+          <img src={photo.src.small} alt="" width="500px" />
+        </div>
+
   
       </>
     )
