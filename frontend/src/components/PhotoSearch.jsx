@@ -137,10 +137,10 @@ useEffect(()=>{
 
       <>
       
-    <div  className={`w-1/${gridColumns} p-2 cursor-pointer` } onClick={()=>handleClickOpen(photo)}>
-      <img src={photo.src.small}
- alt="" width="500px"   />
-    </div>
+      <div className={`w-1/${gridColumns} p-2 cursor-pointer`} onClick={() => handleClickOpen(photo)}>
+  <img src={photo.src.small} alt="" width="500px" />
+</div>
+
   
       </>
     )
