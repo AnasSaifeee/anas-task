@@ -43,8 +43,10 @@ function PhotoSearch() {
   const styles = {
     gridItem: {
       width: `calc(100% / ${gridColumns})`,
-      padding: '2px',
+      padding:"2px",
+      // paddingTop:"20px",
       cursor: 'pointer',
+      
     },
   };
 useEffect(()=>{
@@ -146,7 +148,7 @@ useEffect(()=>{
       <>
       
       <div style={styles.gridItem} onClick={() => handleClickOpen(photo)}>
-          <img src={photo.src.small} alt="" width="500px" />
+          <img src={photo.src.original} className='px-2 py-2' alt="" width="500px" />
         </div>
 
   
